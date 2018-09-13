@@ -1,37 +1,12 @@
-========================================================================
-    CONSOLE APPLICATION : [!output PROJECT_NAME] Project Overview
-========================================================================
+Financial Computing
 
-AppWizard has created this [!output PROJECT_NAME] application for you.
+Goal of this Project
+We see surprises in company's quater earning reports. Sometimes companies are doing better than they expected and sometimes they miss the expectation. The release of earning report can be considered as one sentiment signal, therefore it could cause flucutation in stock prices.
 
-This file contains a summary of what you will find in each of the files that
-make up your [!output PROJECT_NAME] application.
+Methodology: Bootstrapping
+We divide the suprise factors into three groups based on whether the EPS beats Wall Street's predictions: meet(-5% to 5%), beat (over +5%), and miss (below -5%). We use 453 stocks to form our stock pool. After we divide them into 3 big groups by their earning surprises, we randomly select 40 stocks with replacement and calculate their Average Abnormal Return (AAR) and Cumulative Average Abnormal Return (CAAR), for N resample times, and finally take the average.
 
+Project Architechture
+We have three subsystem: a DataHandle (process all data extracted from Yahoo Finance and companies' constituents information, like the date of releasing earnings report, from Bloomberg), Core (STL design, sample data and store calculation), ExcelDriver (connect to Excel and display all calculation and plotting result).
 
-    This is the main project file for VC++ projects generated using an Application Wizard.
-    It contains information about the version of Visual C++ that generated the file, and
-    information about the platforms, configurations, and project features selected with the
-    Application Wizard.
-
-    This is the filters file for VC++ projects generated using an Application Wizard. 
-    It contains information about the association between the files in your project 
-    and the filters. This association is used in the IDE to show grouping of files with
-    similar extensions under a specific node (for e.g. ".cpp" files are associated with the
-    "Source Files" filter).
-
-    This is the main application source file.
-
-/////////////////////////////////////////////////////////////////////////////
-Other standard files:
-
-StdAfx.h, StdAfx.cpp
-    These files are used to build a precompiled header (PCH) file
-    named [!output PROJECT_NAME].pch and a precompiled types file named StdAfx.obj.
-
-/////////////////////////////////////////////////////////////////////////////
-Other notes:
-
-AppWizard uses "TODO:" comments to indicate parts of the source code you
-should add to or customize.
-
-/////////////////////////////////////////////////////////////////////////////
+I am reponsible for the core part.
