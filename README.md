@@ -10,3 +10,5 @@ We divide the suprise factors into three groups based on whether the EPS beats W
 We have three subsystem: a DataHandle (process all data extracted from Yahoo Finance and companies' constituents information, like the date of releasing earnings report, from Bloomberg), Core (STL design, sample data and store calculation), ExcelDriver (connect to Excel and display all calculation and plotting result).
 
 I am reponsible for the core part.
+
+Fan
